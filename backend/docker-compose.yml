@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5435
+    environment:
+      - POSTGRES_PASSWORD=3!NQHf32+rCP_=
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=admin
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=miguel_guante@outlook.com
+      - PGADMIN_DEFAULT_PASSWORD=x{_)R2Sm=]8FhJP}
+    ports:
+      - 80:80
+    depends_on:
+      - postgres
